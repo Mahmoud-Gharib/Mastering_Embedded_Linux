@@ -1,6 +1,6 @@
 # Mastering_Embedded_Linux
 
-![Alt Text](https://www.google.com/url?sa=i&url=https%3A%2F%2Fblog.felgo.com%2Fembedded%2Fembedded-operating-systems&psig=AOvVaw1SQRnOpypBykkHjcBrVOLg&ust=1710091733454000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJiJqKLa54QDFQAAAAAdAAAAABAE)
+![image](https://github.com/Mahmoud-Gharib/Mastering_Embedded_Linux/assets/62407045/db3c8af0-6932-4130-a6c8-8d9126591fed)
 
 You can be one of these :
         1) Application_Engineer 
