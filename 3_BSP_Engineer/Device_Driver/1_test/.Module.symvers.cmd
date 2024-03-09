@@ -1,0 +1,1 @@
+cmd_/home/gharib/GHARIB/3_BSP_Engineer/Device_Driver/1_test/Module.symvers :=  scripts/mod/modpost -m -a     -o /home/gharib/GHARIB/3_BSP_Engineer/Device_Driver/1_test/Module.symvers -T /home/gharib/GHARIB/3_BSP_Engineer/Device_Driver/1_test/modules.order -i Module.symvers -e 

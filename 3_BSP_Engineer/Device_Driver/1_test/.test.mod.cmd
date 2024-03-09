@@ -1,0 +1,1 @@
+cmd_/home/gharib/GHARIB/3_BSP_Engineer/Device_Driver/1_test/test.mod := printf '%s\n'   test.o | awk '!x[$$0]++ { print("/home/gharib/GHARIB/3_BSP_Engineer/Device_Driver/1_test/"$$0) }' > /home/gharib/GHARIB/3_BSP_Engineer/Device_Driver/1_test/test.mod

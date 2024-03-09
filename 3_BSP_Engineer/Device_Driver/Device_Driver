@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+function Generate_Device_Driver () 
+{
+	declare Device_Driver_Name=$1
+	mkdir $1
+	cd $1
+	touch $Device_Driver_Name.c Makefile
+	
+
+	
+	
+	$Device_Driver_Name_path="`pwd`/$Device_Driver_Name.c"
+	$Device_Driver_Name.c_text="
+	#include<linux/module.h>
+	#include<linux/init.h>
+
+	/*Meta Data*/
+	MODULE_LICENSE    ("GPL");
+	MODULE_AUTHOR     ("Mahmoud Gharib");
+	MODULE_DESCRIPTION("");
+
+static int __init ModuleInit(void)
+{
+   printk("Hello , Kernel \n");
+   return 0;
+}
+
+static void __exit ModuleExit(void)
+{
+   printk("GoodBye , Kernel \n");
+}
+
+module_init(ModuleInit);
+module_exit(ModuleExit);  
+		  "
+	echo "$Device_Driver_Name.c_text" > "$Device_Driver_Name_path"
+					
+}
+
+read -p "Device Driver Name :" Device_Driver_Name
+Generate_Device_Driver ${Device_Driver_Name}

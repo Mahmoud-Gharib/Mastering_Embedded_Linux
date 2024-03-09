@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+function Generate_BootLoader () 
+{
+	declare CustomDirectory=`pwd`
+	#git clone https://github.com/u-boot/u-boot.git
+	cd u-boot/
+	make distclean 
+	ls configs | grep $1
+	
+	read -p "Target_Config :" Target_Config
+	read -p "ARCH : " ARCH
+	read -p "CROSS_COMPILE : " CROSS_COMPILE
+	
+	make $Target_Config 	ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE
+	make menuconfig 	ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE
+	make 	        	ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE
+	
+	mkdir $CustomDirectory/$Target_Config
+ 	cp    u-boot.bin $CustomDirectory/$Target_Config				
+}
+
+read -p "Search_Target :" Target
+Generate_BootLoader ${Target}
