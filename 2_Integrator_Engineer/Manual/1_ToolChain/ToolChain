@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+function Generate_ToolChain () 
+{
+	declare CustomDirectory=`pwd`
+	git clone https://github.com/crosstool-ng/crosstool-ng
+	cd crosstool-ng/
+	./bootstrap
+        ./configure --enable-local 
+        make
+	./ct-ng list-samples | grep $1
+	
+	read -p "CROSS_COMPILE : " CROSS_COMPILE
+	./ct-ng $CROSS_COMPILE
+	./ct-ng menuconfig
+	./ct-ng build
+	
+ 	cp  -r /home/`whoami`/x-tools/$CROSS_COMPILE  $CustomDirectory/				
+}
+
+read -p "Search_Target :" Target
+Generate_ToolChain ${Target}
+
+
+

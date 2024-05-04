@@ -3,7 +3,7 @@
 function Generate_BootLoader () 
 {
 	declare CustomDirectory=`pwd`
-	#git clone https://github.com/u-boot/u-boot.git
+	git clone https://github.com/u-boot/u-boot.git
 	cd u-boot/
 	make distclean 
 	ls configs | grep $1
